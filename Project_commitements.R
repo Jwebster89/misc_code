@@ -2,7 +2,7 @@ library(ggplot2)
 library(reshape2)
 
 df = read.table("Project_times.tsv", header = TRUE, sep="\t")
-df_long <- melt(df, id.vars = c("Status", "FTE"), variable.name="year", value.name="time_commitment")
+df_long <- melt(df, id.vars = c("Status", "Project"), variable.name="year", value.name="time_commitment")
 
 df_long$Status <- factor(df_long$Status, levels = c("P", "A"))
 
